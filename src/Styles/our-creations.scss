@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-Gray: hsl(0, 0%, 55%);
+    --Very-Dark-Gray: hsl(0, 0%, 41%)
+}
+
+
+/* Gobal container */
+.principal {
+    display: flex;
+    justify-content: center;
+}
+
+.desktop {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+}
+
+.mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTAINER CARDS */
+.containerCardMobile {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.containerCardDesktop {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: none;
+}
+
+/* CARD */
+
+.cardMobile:hover {
+    transition: .2s ease;
+    opacity: 60%;
+    backface-visibility: hidden;
+    cursor: pointer;
+
+    .tittle {
+        color: var(--Black);
+    }
+}
+
+.cardMobile img {
+    width: 220px;
+    height: 110px;
+    border-radius: 2px;
+}
+
+.cardDesktop:hover {
+    transition: .2s ease;
+    opacity: 60%;
+    z-index: 0.5;
+    backface-visibility: hidden;
+    cursor: pointer;
+
+    .tittle {
+        color: var(--Black);
+    }
+}
+
+.cardDesktop img {
+    width: 200px;
+    height: 300px;
+    border-radius: 2px;
+}
+
+.tittle {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--White);
+    position: absolute;
+    margin-top: -30px;
+    padding-left: 10px;
+}
+
+.tittle:hover {
+    color: var(--Black);
+}
+
+
+.btn {
+    border-color: var(--Black);
+    border-radius: 2px;
+}
+
+.btn:hover {
+    background-color: var(--Black);
+    color: var(--White);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 375px) {
+    .mobile {
+        display: none;
+    }
+
+    .containerCardMobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .containerCardDesktop {
+        display: block;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+}
+
+
+@media screen and (min-width: 550px) {
+    .containerCardDesktop {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 15px;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .containerCardDesktop {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 20px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .containerCardDesktop {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 25px;
+    }
+
+}
